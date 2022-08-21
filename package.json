@@ -8,7 +8,8 @@
     "start": "webpack serve",
     "build:dev": "rimraf ./dist && set NODE_ENV=development && webpack",
     "build:pro": "rimraf ./dist && set NODE_ENV=production && webpack",
-    "build:analyze": "set ANALYZE_BUNDLE=1 && set NODE_ENV=production && webpack serve"
+    "build:analyze": "set ANALYZE_BUNDLE=1 && set NODE_ENV=production && webpack serve",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -42,6 +43,7 @@
   "dependencies": {
     "antd": "^4.17.2",
     "axios": "^0.24.0",
+    "gh-pages": "^4.0.0",
     "hox": "^1.1.4",
     "path": "^0.12.7",
     "react": "^17.0.2",
