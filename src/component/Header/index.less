@@ -1,0 +1,150 @@
+// 常规状态
+.header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 90px;
+    transition: .25s;
+    color: var(--gray-1);
+
+    .logo-box {
+        position: absolute;
+        top: 20px;
+        left: 200px;
+        width: 46px;
+        height: 46px;
+        transition: .25s;
+
+        .logo {
+            display: inline-block;
+            width: 42px;
+            height: 42px;
+            border-radius: 16px;
+            border: 2px solid var(--gray-6);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: left center;
+            transition: .25s;
+
+            &:hover {
+                border: 2px solid var(--gray-8);
+                transition: 0.5s;
+            }
+        }
+    }
+
+    .link-box {
+        position: absolute;
+        right: 170px;
+        top: 30px;
+        white-space: nowrap;
+        transition: .25s;
+
+        .link-item {
+            margin: 0 10px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 18px;
+            position: relative;
+            cursor: pointer;
+            transition: .25s;
+
+            &:hover {
+                background-color: rgba(191, 191, 191, 0.3);
+                transition: 0.5s;
+            }
+        }
+    }
+
+    .menu-box {
+        display: none;
+        position: absolute;
+        top: 22px;
+        right: 25px;
+        width: 46px;
+        height: 46px;
+        border-radius: 6px;
+        transition: .25s;
+
+        .menu-btn {
+            width: 34px;
+            height: 34px;
+            padding: 6px;
+            transition: .25s;
+        }
+
+        &:hover {
+            background-color: rgba(191, 191, 191, 0.3);
+            transition: 0.5s;
+        }
+    }
+}
+
+// 吸顶状态
+.header-fixed {
+    z-index: 10;
+    position: fixed;
+    height: 90px;
+    background-color: #333647;
+    box-shadow: rgb(0 0 0 / 10%) 0 20px 20px;
+
+    .logo-box {
+        .logo {
+            background-image: url(https://maorx.cn/images/Logo_Main_2108_Border.png);
+        }
+    }
+}
+
+@media screen and (max-width: 1300px) {
+
+    .header,
+    .header-fixed {
+        .logo-box {
+            left: 100px;
+        }
+
+        .link-box {
+            right: 70px
+        }
+
+        .menu-box {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    .header,
+    .header-fixed {
+        .logo-box {
+            left: 70px;
+        }
+
+        .link-box {
+            right: 40px
+        }
+
+        .menu-box {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 760px) {
+
+    .header,
+    .header-fixed {
+        .logo-box {
+            left: 25px;
+        }
+
+        .link-box {
+            display: none;
+        }
+
+        .menu-box {
+            display: block;
+        }
+    }
+}

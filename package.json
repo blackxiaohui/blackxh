@@ -5,6 +5,7 @@
   "main": "index.tsx",
   "homepage": "https://blackxiaohui.github.io/blackxh/",
   "scripts": {
+    "init": "yarn",
     "start": "webpack serve",
     "build:dev": "rimraf ./dist && set NODE_ENV=development && webpack",
     "build:pro": "rimraf ./dist && set NODE_ENV=production && webpack",

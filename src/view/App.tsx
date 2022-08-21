@@ -1,17 +1,23 @@
 import { FC } from "react";
+import { Redirect, Route, Switch } from "react-router-dom";
+import { Home } from "./Home";
+import { Header } from "@/component/Header";
+import { SideDrawer } from "@/component/SideDrawer";
 import "./App.less";
+
 
 
 export const App: FC = () => {
 
     return (
-        <div className="app">
-            <div className="main">
-                布莱克小辉的个人网站
-            </div>
-            <div className="main">
-                搭建中......
-            </div>
-        </div>
+        <>
+            <Header />
+            <SideDrawer />
+
+            <Switch>
+                <Route exact path="/home" component={Home} />
+                <Redirect to={`/home`} />
+            </Switch>
+        </>
     );
 }

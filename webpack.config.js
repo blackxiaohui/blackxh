@@ -90,11 +90,11 @@ module.exports = (env) => {
                         loader: "url-loader", // url-loader 依赖于  file-loader 要使用url-loader必须安装file-loader
                         options: {
                             name: "[name].[hash:16].[ext]", // 文件名.hash.文件扩展名 默认格式为[hash].[ext]，没有文件名
-                            limit: 1024 * 16, // 将小于8KB的图片转换成base64的格式
-                            outputPath: "assets/imgs", // 为你的文件配置自定义 output 输出目录 ; 用来处理图片路径问题
-                            publicPath: "assets/imgs", // 为你的文件配置自定义 public 发布目录 ; 用来处理图片路径问题
+                            limit: 1024 * 1, // 将小于8KB的图片转换成base64的格式
+                            outputPath: "assets/image", // 为你的文件配置自定义 output 输出目录 ; 用来处理图片路径问题
+                            publicPath: "assets/image", // 为你的文件配置自定义 public 发布目录 ; 用来处理图片路径问题
                         },
-                    }, ],
+                    }],
                 },
             ],
         },
