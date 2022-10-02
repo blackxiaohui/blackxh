@@ -1,5 +1,4 @@
-import { FC } from "react";
-import { Footer } from "@/component/Footer";
+import { FC, useEffect } from "react";
 import { Works } from "./components/Works";
 import { AboutUs } from "./components/AboutUs";
 import { Logs } from "./components/Logs";
@@ -8,6 +7,10 @@ import "./index.less";
 
 
 export const Home: FC = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <div className="home-main">

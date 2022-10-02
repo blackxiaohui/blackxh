@@ -1,9 +1,13 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import "./index.less";
 
 
 
 export const StringTool: FC = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <div className="string-tool-main">
