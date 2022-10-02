@@ -84,30 +84,30 @@ module.exports = (env) => {
                     use: ["style-loader", "css-loader"],
                 },
                 {
-                    test: /\.(gif|png|jpe?g)$/i,
-                    use: [{
-                        // 用 url-loader 处理图片
-                        loader: "url-loader", // url-loader 依赖于  file-loader 要使用url-loader必须安装file-loader
-                        options: {
-                            name: "[name].[hash:16].[ext]", // 文件名.hash.文件扩展名 默认格式为[hash].[ext]，没有文件名
-                            limit: 1024 * 1, // 将小于8KB的图片转换成base64的格式
-                            outputPath: "assets/image", // 为你的文件配置自定义 output 输出目录 ; 用来处理图片路径问题
-                            publicPath: "assets/image", // 为你的文件配置自定义 public 发布目录 ; 用来处理图片路径问题
+                    test: /\.(png|jpe?g|gif|webp)$/,
+                    type: "asset",
+                    parser: {
+                        dataUrlCondition: {
+                            maxSize: 10 * 1024, // 小于10k的图片会被base64处理
                         },
-                    }],
+                    },
+                    generator: {
+                        // 生成资源名称
+                        filename: 'images/[name][hash:8][ext]',
+                    },
                 },
             ],
         },
         plugins: [
             new WebpackBar(),
 
-            new webpack.DefinePlugin({
-                "process.env.NODE_ENV": JSON.stringify(ENV),
-                "process.env.npm_package_version": JSON.stringify(
-                    process.env.npm_package_version
-                ),
-                "process.env.APP_ENV": JSON.stringify(process.env.APP_ENV || "boe"),
-            }),
+            // new webpack.DefinePlugin({
+            //     "process.env.NODE_ENV": JSON.stringify(ENV),
+            //     "process.env.npm_package_version": JSON.stringify(
+            //         process.env.npm_package_version
+            //     ),
+            //     "process.env.APP_ENV": JSON.stringify(process.env.APP_ENV || "boe"),
+            // }),
 
             new HtmlWebpackPlugin({
                 filename: "index.html",

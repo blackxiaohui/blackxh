@@ -1,51 +1,81 @@
 .home-main {
     width: 100%;
+    min-width: 300px;
     background-color: #333647;
 
+    // 首页各模块通用配置
     .home-item {
-        height: 800px; // 固定基础高度
         padding: 90px 0;
-        color: var(--gray-1);
+        color: var(--gray-8);
         font-size: 30px;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        div>h3 {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
     }
 
     // 首页模块
     .home-warp {
+        height: 900px;
         padding-top: 360px;
         color: var(--gray-1);
-        font-size: 68px;
-        font-weight: 500;
-        font-family: "华文楷体";
+        background: url('../../assets/image/home_bg.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top center;
 
-        div {
-            max-width: 370px;
+        .title {
+            width: 460px;
+            font-size: 68px;
+            font-weight: 500;
+            transition: .25s;
 
-            &:first-child {
-                margin-left: -30px;
+            &-first {
+                text-align: left;
             }
 
-            &:last-child {
-                margin-left: 30px;
+            &-last {
+                text-align: right;
             }
+        }
+
+        .sub-title {
+            margin-top: 40px;
+            font-size: 16px;
         }
     }
 
     // 关于我模块
     .about-warp {
-        height: 500px;
-        background-color: #252734;
+        background-color: var(--gray-1);
     }
 
     // 作品集锦模块
     .works-warp {
-        height: 700px;
+        background-color: var(--gray-2);
     }
 
     // 更新日志模块
     .logs-warp {
-        height: 700px;
-        background-color: #252734;
+        background-color: var(--gray-1);
+    }
+}
+
+@media screen and (max-width: 760px) {
+
+    .home-main {
+        .home-warp {
+            .title {
+                width: 250px;
+                font-size: 40px;
+                transition: .25s;
+            }
+        }
     }
 }

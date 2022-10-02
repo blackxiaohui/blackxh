@@ -1,7 +1,9 @@
 import { FC } from "react";
-import { Header } from "@/component/Header";
-import "./index.less";
 import { Footer } from "@/component/Footer";
+import { Works } from "./components/Works";
+import { AboutUs } from "./components/AboutUs";
+import { Logs } from "./components/Logs";
+import "./index.less";
 
 
 
@@ -10,21 +12,21 @@ export const Home: FC = () => {
     return (
         <div className="home-main">
             <div id="home" className="home-item home-warp">
-                <div>
-                    <div>/但行好事</div>
-                    <div>莫问前程/</div>
+                <div className="title">
+                    <div className="title-first">/ 但行好事</div>
+                    <div className="title-last">莫问前程 /</div>
                 </div>
+                <div className="sub-title">--- 欢迎来到布莱克小辉的个人主页 ---</div>
             </div>
             <div id="about" className="home-item about-warp">
-                <h4>关于我</h4>
+                <AboutUs />
             </div>
             <div id="works" className="home-item works-warp">
-                <h4>作品集锦</h4>
+                <Works />
             </div>
             <div id="logs" className="home-item logs-warp">
-                <h4>更新日志</h4>
+                <Logs />
             </div>
-            <Footer />
         </div>
     );
 }
