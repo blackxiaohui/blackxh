@@ -1,0 +1,179 @@
+// 常规状态
+.header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    transition: .25s;
+    color: var(--gray-1);
+
+    .logo-box {
+        position: absolute;
+        top: 20px;
+        left: 200px;
+        width: 46px;
+        height: 46px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        transition: .25s;
+
+        .logo {
+            display: inline-block;
+            height: 42px;
+        }
+
+        .text-logo {
+            display: inline-block;
+            height: 38px;
+            margin-left: 10px;
+        }
+    }
+
+    .link-box {
+        position: absolute;
+        right: 170px;
+        top: 25px;
+        white-space: nowrap;
+        transition: .05s;
+
+        .link-item {
+            margin: 0 10px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 18px;
+            position: relative;
+            cursor: pointer;
+            transition: .05s;
+
+            &:hover {
+                background-color: rgba(191, 191, 191, 0.3);
+                transition: 0.05s;
+            }
+        }
+    }
+
+    .menu-box {
+        display: none;
+        position: absolute;
+        top: 22px;
+        right: 25px;
+        width: 46px;
+        height: 46px;
+        padding: 6px;
+        border-radius: 6px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        transition: .25s;
+
+        &:hover {
+            background-color: rgba(191, 191, 191, 0.3);
+            transition: 0.5s;
+        }
+    }
+}
+
+// 吸顶状态
+.header-fixed {
+    z-index: 10;
+    position: fixed;
+    height: 80px;
+    background-color: var(--gray-1);
+    color: var(--gray-8);
+    box-shadow: rgb(0 0 0 / 10%) 0 20px 20px;
+}
+
+@media screen and (max-width: 1300px) {
+
+    .header,
+    .header-fixed {
+        .logo-box {
+            left: 100px;
+        }
+
+        .link-box {
+            right: 70px
+        }
+
+        .menu-box {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    .header,
+    .header-fixed {
+        .logo-box {
+            left: 70px;
+        }
+
+        .link-box {
+            right: 40px
+        }
+
+        .menu-box {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 760px) {
+
+    .header,
+    .header-fixed {
+        .logo-box {
+            left: 25px;
+        }
+
+        .link-box {
+            display: none;
+        }
+
+        .menu-box {
+            display: block;
+        }
+    }
+}
+
+.ant-dropdown {
+
+    ul {
+        width: 140px;
+        padding: 0;
+        border-radius: 5px;
+
+        li {
+            color: #000000;
+            line-height: 30px;
+            border-radius: 5px;
+            margin-top: 5px;
+
+            &:hover {
+                background-color: rgba(191, 191, 191, 0.3);
+                transition: 0.05s;
+            }
+
+            div {
+                line-height: 30px;
+                background-color: transparent;
+                color: #000000;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+
+                &:hover {
+                    background-color: transparent;
+                    color: #ffffff;
+                }
+            }
+        }
+
+        .menu-icon {
+            font-size: 20px;
+        }
+    }
+}
