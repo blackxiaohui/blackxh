@@ -1,0 +1,74 @@
+.get-color-tool-main {
+    max-width: 1000px;
+    min-width: 300px;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: rgb(0 0 0 / 20%) 0 10px 30px;
+
+    .input {
+        display: none;
+    }
+
+    .title {
+        margin-bottom: 20px;
+        font-weight: 700;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .item-box {
+        min-width: 300px;
+        max-width: 1000px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .item {
+            height: 32px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 20px;
+
+            &-title {
+                margin-right: 20px;
+            }
+
+            .select-btn {
+                width: 100%;
+            }
+
+            .ant-btn,
+            .ant-input {
+                border-radius: 5px;
+            }
+        }
+
+        .rgb-item {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            .middle-item {
+                margin: 0 10px;
+            }
+
+            // .ant-input {
+            //     width: 200px;
+            // }
+        }
+    }
+
+    .img-box {
+        max-width: 1200px;
+        max-height: 600px;
+        min-height: 200px;
+        background-color: var(--gray-1);
+        // border: 1px solid var(--gray-8);
+        overflow: auto;
+    }
+
+}
