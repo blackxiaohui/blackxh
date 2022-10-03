@@ -12,7 +12,7 @@ export const ConvertColorTool: FC = () => {
 
     return (
         <div className="convert-color-tool-main">
-
+            <div className="title">颜色转换</div>
         </div>
     );
 
