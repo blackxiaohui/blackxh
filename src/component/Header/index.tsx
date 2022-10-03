@@ -84,7 +84,7 @@ export const Header: FC = () => {
                         : <>
                             {
                                 meunList.map(item => {
-                                    return <span className="link-item" onClick={() => goPage(item.link)}>{item.title}</span>
+                                    return <span key={item.title} className="link-item" onClick={() => goPage(item.link)}>{item.title}</span>
                                 })
                             }
                         </>

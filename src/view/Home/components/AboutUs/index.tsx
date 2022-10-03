@@ -11,8 +11,8 @@ export const AboutUs: FC = () => {
             <h3>关于我</h3>
             <div className="about-list">
                 {
-                    aboutList.map(about => {
-                        return <div className="about-item">{about.content}</div>
+                    aboutList.map((about, index) => {
+                        return <div key={index} className="about-item">{about.content}</div>
                     })
                 }
             </div>

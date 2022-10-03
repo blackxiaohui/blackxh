@@ -13,7 +13,7 @@ export const Logs: FC = () => {
             <Timeline mode={"left"} className="logs-timeline">
                 {
                     logList.map(log => {
-                        return <Timeline.Item color="#ff7d73" label={log.time}>{log.commit}</Timeline.Item>
+                        return <Timeline.Item key={log.time} color="#ff7d73" label={log.time}>{log.commit}</Timeline.Item>
                     })
                 }
             </Timeline>

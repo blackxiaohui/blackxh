@@ -15,7 +15,7 @@ export const Works: FC = () => {
                 {worksList.map(work => {
                     return (
                         <div className="work-item"
-                            key={work.title}
+                            key={work.id}
                             onClick={() => {
                                 history.push(work.link);
                             }}>

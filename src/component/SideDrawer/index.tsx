@@ -51,7 +51,7 @@ export const SideDrawer: FC = () => {
                         : <>
                             {
                                 meunList.map(item => {
-                                    return <div className="link-item" onClick={() => goPage(item.link)}>{item.title}</div>
+                                    return <div key={item.title} className="link-item" onClick={() => goPage(item.link)}>{item.title}</div>
                                 })
                             }
                         </>

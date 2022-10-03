@@ -7,7 +7,7 @@ export const Footer: FC = () => {
 
     return (
         <div className="footer">
-            Made With blackxiaohui@163.com  &  UI With 孔豆豆
+            <span>Made By blackxiaohui@163.com  &  UI By 孔豆豆</span>
         </div>
     );
 }
