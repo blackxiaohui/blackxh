@@ -123,7 +123,7 @@ export const GetColorTool: FC = () => {
         border.style.height = height + "px";
         border.style.top = top + "px";
         border.style.left = left + "px";
-        border.style.border = "1px solid #000000";
+        border.style.border = "2px solid #000000";
         border.style.borderRadius = "5px";
     }
 
