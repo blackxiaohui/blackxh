@@ -60,7 +60,7 @@ export const Wuziqi: FC = () => {
 
     const drawPiece = (x: number, y: number) => {
         if (Number.isNaN(x) || Number.isNaN(y)) return;
-        
+
         const ctx = globalCtx;
         const tx = isBlackRound ? x - 10 : x + 10;
         const ty = isBlackRound ? y - 10 : y + 10;
@@ -139,7 +139,6 @@ export const Wuziqi: FC = () => {
                 <span style={{ cursor: 'pointer' }} onClick={handleRestart}>【重新开始】</span>
             </div>
             <canvas id="el-canvas" onClick={handleClick} ></canvas>
-            <div>123</div>
         </div>
     );
 }
