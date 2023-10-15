@@ -1,12 +1,9 @@
 import { FC } from "react";
-import { useHistory } from "react-router-dom";
 import { worksList } from "@/conf/works";
 import itemBg from "@/assets/image/home_bg.png"
 import "./index.less";
 
 export const Works: FC = () => {
-
-    const history = useHistory();
 
     return (
         <div className="works-box">
@@ -17,7 +14,7 @@ export const Works: FC = () => {
                         <div className="work-item"
                             key={work.id}
                             onClick={() => {
-                                history.push(work.link);
+                                window.location.href = work.link;
                             }}>
                             <img className="pic" src={itemBg}></img>
                             <div className="title-box">
