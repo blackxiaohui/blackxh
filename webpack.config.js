@@ -29,8 +29,9 @@ module.exports = (env) => {
 
     return {
         entry: {
-            main: ["./src/index.tsx"], // 通过文件名解决文件的输出路径问题
-            vendor: ["react", "react-dom"],
+            "main": ["./src/index.tsx"], // 通过文件名解决文件的输出路径问题
+            "main-canvas": ["./src/index-canvas.tsx"], // 通过文件名解决文件的输出路径问题
+            "vendor": ["react", "react-dom"],
         },
         output: {
             path: DIST_PATH,
@@ -43,7 +44,7 @@ module.exports = (env) => {
             inline: true,
             port: LOCAL_PORT,
             open: true,
-            openPage: `http://localhost:${LOCAL_PORT}`,
+            openPage: `http://localhost:${LOCAL_PORT}/canvas.html`,
             historyApiFallback: true,
         },
 
@@ -114,6 +115,13 @@ module.exports = (env) => {
                 template: path.resolve(PUBLIC_PATH, "index.html"),
                 favicon: path.resolve(PUBLIC_PATH, 'favicon.ico'),
                 chunks: ["main", "vendor"],
+            }),
+
+            new HtmlWebpackPlugin({
+                filename: "canvas.html",
+                template: path.resolve(PUBLIC_PATH, "index.html"),
+                favicon: path.resolve(PUBLIC_PATH, 'favicon.ico'),
+                chunks: ["main-canvas"],
             }),
 
             new webpack.HotModuleReplacementPlugin(),
