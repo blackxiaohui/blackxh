@@ -6,8 +6,8 @@ let globalCtx: CanvasRenderingContext2D;
 // 使用一个二维数组，索引作为棋子的坐标
 let pieces: any = []
 // 初始化二维数组
-for (let i = 1; i <= 15; i++) {
-    pieces[i] = []
+for (let i = 0; i < 15; i++) {
+    pieces.push(new Array(15).fill(''));
 }
 
 export const Wuziqi: FC = () => {
@@ -84,13 +84,11 @@ export const Wuziqi: FC = () => {
         if (endGame) return;
 
         // 计算棋子的位置
-        let i = Math.floor((offsetX + 25) / 50)
-        let j = Math.floor((offsetY + 25) / 50)
+        let i = Math.floor((offsetX + 25) / 50) - 1;
+        let j = Math.floor((offsetY + 25) / 50) - 1;
 
         // 判断当前位置是否已经存在棋子
-        if (pieces[j][i]) {
-            return;
-        }
+        if (pieces[j][i]) return;
 
         // 将当前索引在二维数组中标记为黑棋或白棋
         pieces[j][i] = isBlackRound ? "black" : "white";
@@ -99,11 +97,8 @@ export const Wuziqi: FC = () => {
         // 可以得知，横纵线的坐标值都是整数，可以通过 Math.floor(鼠标的坐标 / 50) * 50 来得到整数坐标
         // 因为一个格子宽是50，我们可以将 鼠标的坐标值 都加上 25 去计算，这样就能落到最近的框线上
         // 这里需要点想象空间，可以说是只能意会，言传很难
-        // 计算棋子的位置
-        let x = i * 50
-        let y = j * 50
-        // 绘制棋子
-        drawPiece(x, y)
+        // 计算绘制棋子
+        drawPiece((i + 1) * 50, (j + 1) * 50);
 
         // 检查是否满足获胜条件
         const isEndGame = checkAll({
@@ -111,7 +106,7 @@ export const Wuziqi: FC = () => {
             isBlack: isBlackRound,
             row: j,
             col: i
-        })
+        });
         if (isEndGame) {
             setEndGame(isEndGame);
             return;
