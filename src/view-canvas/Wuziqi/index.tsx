@@ -1,4 +1,6 @@
 import { FC, useEffect, useState } from "react";
+import { Dialog } from "@/component/Dialog"
+import { OverDialog } from "./component/OverDialog"
 import { checkAll } from './checkTools';
 
 // 全局操作上下文
@@ -134,6 +136,13 @@ export const Wuziqi: FC = () => {
                 <span style={{ cursor: 'pointer' }} onClick={handleRestart}>【重新开始】</span>
             </div>
             <canvas id="el-canvas" onClick={handleClick} ></canvas>
+            {
+                endGame
+                    ? <Dialog>
+                        <OverDialog isBlack={isBlackRound} />
+                    </Dialog>
+                    : <></>
+            }
         </div>
     );
 }
